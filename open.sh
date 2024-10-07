@@ -1,0 +1,1 @@
+"C:\Program Files\Google\Chrome\Application\chrome.exe" --custom-devtools-frontend="file:\\\\wsl.localhost\Ubuntu\home\patrick\projects\devtools\appspot\download\chrome-devtools-frontend.appspot.com\serve_file\@c82bbfc83a46869153a82ee063df4a7ee9718f8d" --disable-search-engine-choice-screen --enable-logging=stderr  --no-first-run --user-data-dir=/some/dir --v=1 "www.google.de"
