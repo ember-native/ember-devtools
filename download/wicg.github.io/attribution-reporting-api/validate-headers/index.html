@@ -1,0 +1,104 @@
+<!DOCTYPE html><html><head><meta charset="utf-8">
+<title>Attribution Reporting Header Validation</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔷</text></svg>">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 1em;
+}
+
+body,
+form,
+textarea,
+#output {
+  height: 100%;
+  width: 100%;
+}
+
+body,
+form,
+#left,
+#right {
+  display: flex;
+}
+
+body,
+#left,
+#right {
+  flex-direction: column;
+}
+
+#header {
+  flex: none;
+}
+
+#left,
+#left > * {
+  flex: 1;
+}
+
+textarea {
+  resize: none;
+}
+</style>
+</head><body>
+<h1>Attribution Reporting Header Validation</h1>
+<form>
+  <noscript>JavaScript is required to use this form.</noscript>
+  <div id="left">
+    <fieldset id="input">
+      <legend>Value</legend>
+      <textarea></textarea>
+    </fieldset>
+    <fieldset>
+      <legend>Effective Value</legend>
+      <output><pre><code id="effective"></code></pre></output>
+    </fieldset>
+  </div>
+  <div id="right">
+    <fieldset id="header">
+      <legend>Header</legend>
+      <p><label><input type="radio" name="header" value="source" checked=""><code>Attribution-Reporting-Register-Source</code></label>
+      </p><fieldset id="source-type">
+        <legend>Source Type</legend>
+        <p><label><input type="radio" name="source-type" value="event" checked="">event</label>
+        </p><p><label><input type="radio" name="source-type" value="navigation">navigation</label>
+      </p></fieldset>
+      <p><label><input type="radio" name="header" value="trigger"><code>Attribution-Reporting-Register-Trigger</code></label>
+      </p><p><label><input type="radio" name="header" value="os-source"><code>Attribution-Reporting-Register-OS-Source</code></label>
+      </p><p><label><input type="radio" name="header" value="os-trigger"><code>Attribution-Reporting-Register-OS-Trigger</code></label>
+      </p><p><label><input type="radio" name="header" value="eligible"><code>Attribution-Reporting-Eligible</code></label>
+      </p><p><label><input type="radio" name="header" value="info"><code>Attribution-Reporting-Info</code></label>
+      </p><p><label><input type="checkbox" checked="" disabled="">Use Chromium's vendor-specific values</label> <a href="https://github.com/WICG/attribution-reporting-api/blob/main/params/chromium-params.md" target="_blank">(details)</a>
+      </p><p><label><input type="checkbox" name="flex">Enable experimental Flexible Event fields</label> <a href="https://github.com/WICG/attribution-reporting-api/blob/main/flexible_event_config.md" target="_blank">(details)</a>
+    </p></fieldset>
+    <fieldset id="output">
+      <legend>Validation Result</legend>
+      <button type="button" id="linkify">Copy Link</button>
+      <output>
+        <div id="success"></div>
+        <p>Errors:
+        </p><ul id="errors"></ul>
+        <p>Warnings:
+        </p><ul id="warnings"></ul>
+        <p>Notes:
+        </p><ul id="notes"></ul>
+      </output>
+    </fieldset>
+  </div>
+</form>
+<template id="pathful-issue">
+  <li><code></code> <span></span></li>
+</template>
+<script src="../validate-headers.js"></script>
+</body></html>

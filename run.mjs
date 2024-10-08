@@ -11,13 +11,15 @@ class MyPlugin {
 	}
 }
 
+const hash = 'abb728f8afc6a86cc66b1313f5056728ce422ddd'
+
 const scraper = new Scraper({
     urls: [
-      'https://chrome-devtools-frontend.appspot.com/serve_file/@c82bbfc83a46869153a82ee063df4a7ee9718f8d/inspector.html',
-      'https://chrome-devtools-frontend.appspot.com/serve_file/@c82bbfc83a46869153a82ee063df4a7ee9718f8d/devtools_app.html',
-      'https://chrome-devtools-frontend.appspot.com/serve_file/@c82bbfc83a46869153a82ee063df4a7ee9718f8d/core/i18n/locales/en-US.json',
-      'https://chrome-devtools-frontend.appspot.com/serve_file/@c82bbfc83a46869153a82ee063df4a7ee9718f8d/models/trace/lantern/metrics/metrics.js',
-      'https://chrome-devtools-frontend.appspot.com/serve_file/@c82bbfc83a46869153a82ee063df4a7ee9718f8d/third_party/codemirror.next/chunk/codemirror.js',
+      `https://chrome-devtools-frontend.appspot.com/serve_file/@${hash}/inspector.html`,
+      `https://chrome-devtools-frontend.appspot.com/serve_file/@${hash}/devtools_app.html`,
+      `https://chrome-devtools-frontend.appspot.com/serve_file/@${hash}/core/i18n/locales/en-US.json`,
+      `https://chrome-devtools-frontend.appspot.com/serve_file/@${hash}/models/trace/lantern/metrics/metrics.js`,
+      `https://chrome-devtools-frontend.appspot.com/serve_file/@${hash}/third_party/codemirror.next/chunk/codemirror.js`,
     ],
     directory: './download',
     filenameGenerator: 'bySiteStructure',
