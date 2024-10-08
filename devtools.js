@@ -2,6 +2,7 @@ const webdriver = require('selenium-webdriver')
 const chrome = require('selenium-webdriver/chrome')
 const promise = require('selenium-webdriver/lib/promise')
 const chromedriver = require('chromedriver')
+const path = require('path');
 
 // shortcuts
 const until = webdriver.until
@@ -20,7 +21,12 @@ promise.USE_PROMISE_MANAGER = false
 const Devtools = module.exports = function (options) {
   this.options = options || {}
   this.service = new chrome.ServiceBuilder(chromedriver.path).build()
-  this.driver = chrome.Driver.createSession(new chrome.Options(), this.service)
+  const chromeOpts = new chrome.Options();
+  chromeOpts.addArguments('--disable-search-engine-choice-screen');
+  chromeOpts.addArguments('--app');
+  chromeOpts.addArguments(`--custom-devtools-frontend="file:\\${path.join(__filename, 'download', 'chrome-devtools-frontend.appspot.com', 'serve_file', '@abb728f8afc6a86cc66b1313f5056728ce422ddd')}"`);
+
+  this.driver = chrome.Driver.createSession(chromeOpts, this.service)
 }
 
 Devtools.prototype.open = function (debuggerUrl, options) {
@@ -81,4 +87,4 @@ Devtools.prototype._executeOnPanel = function (methodName) {
 
 
 const devtools = new Devtools({});
-devtools.open('devtools://devtools/bundled/inspector.html?ws=localhost:40000&ember=true')
+devtools.open('devtools://devtools/bundled/ember_app.html?ws=localhost:40000&ember=true')

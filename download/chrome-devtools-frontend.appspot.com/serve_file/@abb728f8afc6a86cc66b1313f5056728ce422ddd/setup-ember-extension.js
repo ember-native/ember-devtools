@@ -115,6 +115,22 @@ async function install() {
         event.data.value = data;
         event.data.type = 'inject-code';
       }
+      if (event.data.type === 'eval') {
+        const data = {
+          "expression": event.data.code,
+          "objectGroup": "console",
+          "includeCommandLineAPI": true,
+          "silent": false,
+          "returnByValue": false,
+          "generatePreview": true,
+          "userGesture": true,
+          "awaitPromise": false,
+          "replMode": true,
+          "allowUnsafeEvalBlockedByCSP": false,
+        }
+        ProtocolClient.test.sendRawMessage('Runtime.evaluate', data);
+        return;
+      }
       ProtocolClient.test.sendRawMessage('Ember.fromExtension', event.data);
     });
     ProtocolClient.test.onMessageReceived = (msg) => {
