@@ -79,8 +79,8 @@ async function install() {
   }
 
 
-  const origin = 'chrome-extension://bmdblncegkenkacieihfhpjfppoconhi'
-  const id = 'bmdblncegkenkacieihfhpjfppoconhi';
+  const origin = 'chrome-extension://njaghcdncehohgfpoomdblcempkpmhin'
+  const id = 'njaghcdncehohgfpoomdblcempkpmhin';
   const ext = {
     addEventListener(...args) {
       console.log(...args);

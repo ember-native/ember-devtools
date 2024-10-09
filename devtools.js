@@ -1,6 +1,5 @@
 const webdriver = require('selenium-webdriver')
 const chrome = require('selenium-webdriver/chrome')
-const promise = require('selenium-webdriver/lib/promise')
 const chromedriver = require('chromedriver')
 const path = require('path');
 
@@ -12,19 +11,25 @@ const By = webdriver.By
  * configure
  * -------------------------------------------------------------------------- */
 
-promise.USE_PROMISE_MANAGER = false
-
 /* -----------------------------------------------------------------------------
  * devtools public
  * -------------------------------------------------------------------------- */
 
-const Devtools = module.exports = function (options) {
+const Devtools = function (options) {
   this.options = options || {}
   this.service = new chrome.ServiceBuilder(chromedriver.path).build()
   const chromeOpts = new chrome.Options();
   chromeOpts.addArguments('--disable-search-engine-choice-screen');
   chromeOpts.addArguments('--app');
-  chromeOpts.addArguments(`--custom-devtools-frontend="file:\\${path.join(__filename, 'download', 'chrome-devtools-frontend.appspot.com', 'serve_file', '@abb728f8afc6a86cc66b1313f5056728ce422ddd')}"`);
+  const devtools = path.join(__dirname, 'download', 'chrome-devtools-frontend.appspot.com', 'serve_file', '@abb728f8afc6a86cc66b1313f5056728ce422ddd');
+  const EmberInspector = path.join(__dirname, 'node_modules', 'ember-inspector', 'dist', 'chrome');
+  console.log('devtools', devtools);
+  chromeOpts.addArguments(`--custom-devtools-frontend=file:\\${devtools}`);
+  chromeOpts.addArguments(`--app=http://www.google.de`);
+  chromeOpts.addArguments(`disable-infobars`);
+  chromeOpts.addArguments(`--disable-infobars`);
+  chromeOpts.addArguments(`--load-extension=${EmberInspector}`);
+  chromeOpts.excludeSwitches("disable-popup-blocking", "enable-automation");
 
   this.driver = chrome.Driver.createSession(chromeOpts, this.service)
 }
@@ -59,7 +64,7 @@ Devtools.prototype._resize = function () {
   const window = this.driver.manage().window()
 
   return window.getSize()
-    .then((size) => window.setSize(size.width, 450))
+  //   .then((size) => window.setSize(size.width, 450))
 }
 
 Devtools.prototype._navigateToUrl = function (debuggerUrl) {
@@ -87,4 +92,4 @@ Devtools.prototype._executeOnPanel = function (methodName) {
 
 
 const devtools = new Devtools({});
-devtools.open('devtools://devtools/bundled/ember_app.html?ws=localhost:40000&ember=true')
+devtools.open('devtools://devtools/bundled/ember_app.html?ws=localhost:40000')

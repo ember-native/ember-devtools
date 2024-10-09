@@ -1,0 +1,1 @@
+{ "main": "dist/devtools.umd.js", "output": "sea-prep.blob" }

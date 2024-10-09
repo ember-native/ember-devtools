@@ -1,4 +1,8 @@
 {
+	"name": "ember-devtools",
+	"scripts": {
+		"run": "node devtools.js"
+	},
 	"dependencies": {
 		"@babel/parser": "^7.25.6",
 		"@babel/traverse": "^7.25.6",
@@ -6,7 +10,10 @@
 		"website-scraper-puppeteer": "^1.1.0"
 	},
 	"devDependencies": {
+		"@rollup/plugin-commonjs": "^28.0.0",
 		"chromedriver": "^129.0.2",
-		"selenium-webdriver": "^4.25.0"
+		"ember-inspector": "^4.13.1",
+		"selenium-webdriver": "^4.25.0",
+		"vite": "^5.4.8"
 	}
 }
