@@ -97,6 +97,9 @@
      * @param {!Array.<!ExtensionDescriptor>} extensions
      */
     addExtensions(extensions) {
+      window.DevtoolsExtensionDescriptors = window.DevtoolsExtensionDescriptors || [];
+      window.DevtoolsExtensionDescriptors.push(...extensions);
+
       // Support for legacy front-ends (<M41).
       if (window['WebInspector'] && window['WebInspector']['addExtensions']) {
         window['WebInspector']['addExtensions'](extensions);

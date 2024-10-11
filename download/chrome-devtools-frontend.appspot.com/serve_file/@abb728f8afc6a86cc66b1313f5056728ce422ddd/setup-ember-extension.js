@@ -79,7 +79,7 @@ async function install() {
   }
 
 
-  const origin = 'chrome-extension://njaghcdncehohgfpoomdblcempkpmhin'
+  const origin = new URL(window.DevtoolsExtensionDescriptors[0].startPage).origin;
   const id = 'njaghcdncehohgfpoomdblcempkpmhin';
   const ext = {
     addEventListener(...args) {
