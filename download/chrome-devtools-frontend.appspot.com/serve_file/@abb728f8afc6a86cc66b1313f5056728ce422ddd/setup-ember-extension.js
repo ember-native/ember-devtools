@@ -2,7 +2,11 @@
 
 async function install() {
   const Host = await import('devtools://devtools/bundled/core/host/host.js');
+  const { InspectorBackend } = await import('devtools://devtools/bundled/core/protocol_client/protocol_client.js');
   const { ThemeSupport } = await import('devtools://devtools/bundled/ui/legacy/theme_support/theme_support.js');
+
+  const RuntimeDomain = InspectorBackend.inspectorBackend.agentPrototype('Runtime');
+  const EmberDomain = InspectorBackend.inspectorBackend.agentPrototype('Ember');
 
   // loadNetworkResource crashes chrome
   InspectorFrontendHost.loadNetworkResource = (...args) => console.log(...args);
@@ -128,9 +132,11 @@ async function install() {
           "replMode": true,
           "allowUnsafeEvalBlockedByCSP": false,
         }
-        ProtocolClient.test.sendRawMessage('Runtime.evaluate', data);
+        // ProtocolClient.test.sendRawMessage('Runtime.evaluate', data);
+        RuntimeDomain.invoke('evaluate', data);
         return;
       }
+      // EmberDomain.invoke('fromExtension', event.data)
       ProtocolClient.test.sendRawMessage('Ember.fromExtension', event.data);
     });
     ProtocolClient.test.onMessageReceived = (msg) => {
