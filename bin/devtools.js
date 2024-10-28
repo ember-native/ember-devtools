@@ -21,8 +21,8 @@ const Devtools = function (options) {
   const chromeOpts = new chrome.Options();
   chromeOpts.addArguments('--disable-search-engine-choice-screen');
   chromeOpts.addArguments('--app');
-  const devtools = path.join(__dirname, 'download', 'chrome-devtools-frontend.appspot.com', 'serve_file', '@abb728f8afc6a86cc66b1313f5056728ce422ddd');
-  const EmberInspector = path.join(__dirname, 'node_modules', 'ember-inspector', 'dist', 'chrome');
+  const devtools = path.resolve(__dirname, '..', 'download', 'chrome-devtools-frontend.appspot.com', 'serve_file', '@abb728f8afc6a86cc66b1313f5056728ce422ddd');
+  const EmberInspector = path.resolve(require.resolve('ember-inspector/package.json'), '..', 'dist', 'chrome');
   console.log('devtools', devtools);
   chromeOpts.addArguments(`--custom-devtools-frontend=file://${devtools}`);
   chromeOpts.addArguments(`--app=http://www.google.de`);
