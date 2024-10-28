@@ -1,3 +1,4 @@
+*
 !.gitignore
 !CHANGELOG.md
 !package.json
@@ -14,3 +15,4 @@
 !ember/**/*
 !node-website-scraper
 !node-website-scraper/**/*
+
