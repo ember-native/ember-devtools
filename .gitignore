@@ -1,0 +1,16 @@
+!.gitignore
+!CHANGELOG.md
+!package.json
+!pnpm-lock.yaml
+!RELEASE.md
+!run.mjs
+!.github
+!.github/**/*
+!bin
+!bin/*
+!download
+!download/**/*
+!ember/
+!ember/**/*
+!node-website-scraper
+!node-website-scraper/**/*
