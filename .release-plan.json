@@ -1,0 +1,17 @@
+{
+  "solution": {
+    "ember-devtools": {
+      "impact": "patch",
+      "oldVersion": "1.0.0",
+      "newVersion": "1.0.1",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2024-10-28)\n\nember-devtools 1.0.1 (patch)\n\n#### :house: Internal\n* `ember-devtools`\n  * [#4](https://github.com/ember-native/ember-devtools/pull/4) fix .gitignore ([@patricklx](https://github.com/patricklx))\n  * [#3](https://github.com/ember-native/ember-devtools/pull/3) fix ignore ([@patricklx](https://github.com/patricklx))\n\n#### Committers: 1\n- Patrick Pircher ([@patricklx](https://github.com/patricklx))\n"
+}
