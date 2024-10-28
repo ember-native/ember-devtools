@@ -2,6 +2,17 @@
 
 ## Release (2024-10-28)
 
+ember-native-devtools 1.0.2 (patch)
+
+#### :house: Internal
+* `ember-native-devtools`
+  * [#6](https://github.com/ember-native/ember-devtools/pull/6) fix deps ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
+## Release (2024-10-28)
+
 ember-devtools 1.0.1 (patch)
 
 #### :house: Internal
