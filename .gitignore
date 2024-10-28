@@ -5,6 +5,7 @@
 !pnpm-lock.yaml
 !RELEASE.md
 !run.mjs
+!.release-plan.json
 !.github
 !.github/**/*
 !bin
