@@ -8,6 +8,9 @@
   "bin": {
     "ember-devtools": "bin/devtools.js"
   },
+  "engines": {
+    "node": ">=18"
+  },
   "files": [
     "bin",
     "download"
