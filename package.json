@@ -19,7 +19,7 @@
     "run": "node bin/devtools.js"
   },
   "dependencies": {
-    "selenium-webdriver": "^4.25.0",
+    "selenium-webdriver": "^4.32.0",
     "ember-inspector": "^4.13.1"
   },
   "peerDependencies": {
