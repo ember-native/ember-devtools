@@ -2,8 +2,9 @@
   "solution": {
     "ember-native-devtools": {
       "impact": "patch",
-      "oldVersion": "1.0.2",
-      "newVersion": "1.0.3",
+      "oldVersion": "1.0.3",
+      "newVersion": "1.0.4",
+      "tagName": "latest",
       "constraints": [
         {
           "impact": "patch",
@@ -13,5 +14,5 @@
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2024-10-28)\n\nember-native-devtools 1.0.3 (patch)\n\n#### :bug: Bug Fix\n* `ember-native-devtools`\n  * [#8](https://github.com/ember-native/ember-devtools/pull/8) must have #!/usr/bin/env node ([@patricklx](https://github.com/patricklx))\n\n#### Committers: 1\n- Patrick Pircher ([@patricklx](https://github.com/patricklx))\n"
+  "description": "## Release (2025-05-09)\n\n* ember-native-devtools 1.0.4 (patch)\n\n#### :bug: Bug Fix\n* `ember-native-devtools`\n  * [#10](https://github.com/ember-native/ember-devtools/pull/10) update deps ([@patricklx](https://github.com/patricklx))\n\n#### Committers: 1\n- Patrick Pircher ([@patricklx](https://github.com/patricklx))\n"
 }
