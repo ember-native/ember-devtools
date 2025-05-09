@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2025-05-09)
+
+* ember-native-devtools 1.0.4 (patch)
+
+#### :bug: Bug Fix
+* `ember-native-devtools`
+  * [#10](https://github.com/ember-native/ember-devtools/pull/10) update deps ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
 ## Release (2024-10-28)
 
 ember-native-devtools 1.0.3 (patch)
