@@ -15,8 +15,8 @@ importers:
         specifier: ^4.13.1
         version: 4.13.1
       selenium-webdriver:
-        specifier: ^4.32.0
-        version: 4.32.0
+        specifier: ^4.33.0
+        version: 4.33.0
     devDependencies:
       '@babel/parser':
         specifier: ^7.27.2
@@ -1377,8 +1377,8 @@ packages:
   sanitize-filename@1.6.3:
     resolution: {integrity: sha512-y/52Mcy7aw3gRm7IrcGDFx/bCk4AhRh2eI9luHOQM86nZsqwiRkkq2GekHXBBD+SmPidc8i2PqtYZl+pWJ8Oeg==}
 
-  selenium-webdriver@4.32.0:
-    resolution: {integrity: sha512-dG48JJnB96Aea1iVaZOKGmd6yT6aemeI1heWI/i8DtfD3pDX7uIlwpDBoGauNhtXAaFaamP+U4hIab8zZkg3Ag==}
+  selenium-webdriver@4.33.0:
+    resolution: {integrity: sha512-5vRhk4iI0B9nYbEitfnCjPDXBfG6o9DNhj5DG2355eQo8idETknhj1tigqqlkHsGephSZwLZqEm/d+3e1stGUA==}
     engines: {node: '>= 18.20.5'}
 
   semver@7.6.3:
@@ -3099,7 +3099,7 @@ snapshots:
     dependencies:
       truncate-utf8-bytes: 1.0.2
 
-  selenium-webdriver@4.32.0:
+  selenium-webdriver@4.33.0:
     dependencies:
       '@bazel/runfiles': 6.3.1
       jszip: 3.10.1
