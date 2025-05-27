@@ -26,7 +26,7 @@
     "chromedriver": "*"
   },
   "devDependencies": {
-    "@babel/parser": "^7.27.2",
+    "@babel/parser": "^7.27.3",
     "@babel/traverse": "^7.27.1",
     "website-scraper": "^5.3.1",
     "website-scraper-puppeteer": "^1.1.0",
