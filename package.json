@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "selenium-webdriver": "^4.33.0",
-    "ember-inspector": "^4.13.1"
+    "ember-inspector": "^4.15.0"
   },
   "peerDependencies": {
     "chromedriver": "*"
