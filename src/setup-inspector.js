@@ -119,34 +119,18 @@ export function setupEmberInspector(options = {}) {
  * IMPORTANT: For Node.js environments, ember_debug must be loaded via require()
  * The file is located at: node_modules/ember-inspector/dist/websocket/ember_debug.js
  */
-export function loadEmberDebug() {
+export async function loadEmberDebug() {
   try {
-    const require = createRequire(import.meta.url);
-
-    // Try multiple possible paths to find ember-inspector
-    const possiblePaths = [
-      // From this package's node_modules
-      'ember-inspector/dist/websocket/ember_debug.js',
-      // Absolute paths as fallback
-      join(__dirname, '../node_modules/ember-inspector/dist/websocket/ember_debug.js'),
-      join(__dirname, '../../node_modules/ember-inspector/dist/websocket/ember_debug.js'),
-      join(__dirname, '../../../node_modules/ember-inspector/dist/websocket/ember_debug.js'),
-    ];
-
     let loaded = false;
     let lastError = null;
 
-    for (const path of possiblePaths) {
-      try {
-        require(path);
-        console.log('✅ Ember Inspector debug loaded');
-        loaded = true;
-        break;
-      } catch (e) {
-        lastError = e;
-        // Try next path
-      }
+    try {
+      await import('ember-inspector/dist/websocket/ember_debug.js');
+      loaded = true;
+    } catch (e) {
+      lastError = e;
     }
+
 
     if (!loaded) {
       console.error('❌ Failed to load ember_debug. Make sure ember-inspector is installed.');

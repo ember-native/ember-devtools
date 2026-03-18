@@ -3,7 +3,9 @@ import { createServer } from 'http';
 import { Server } from 'socket.io';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { createRequire } from "module";
 
+const require = createRequire(import.meta.url);
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 /**
@@ -31,7 +33,80 @@ export function createInspectorServer(options = {}) {
   });
 
   // Try to serve ember-inspector UI from node_modules
-  const inspectorPath = path.join(__dirname, '../../../node_modules/ember-inspector/dist');
+  console.log('dirname', __dirname);
+  const inspectorPath = path.resolve(require.resolve('ember-inspector/ember-cli-build.js'), '..', 'dist', 'websocket');
+  
+  // Middleware to inject WebSocket setup into index.html
+  app.get('/', (req, res, next) => {
+    const fs = require('fs');
+    const indexPath = path.join(inspectorPath, 'index.html');
+    
+    fs.readFile(indexPath, 'utf8', (err, html) => {
+      if (err) {
+        return next(err);
+      }
+      
+      // Create the WebSocket client wrapper script
+      const wsScript = `
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      (function() {
+        // Connect to the inspector server as UI client
+        const socket = io({
+          query: { type: 'ui' }
+        });
+        
+        // Create EventEmitter-like wrapper for Socket.IO
+        const socketWrapper = {
+          _listeners: {},
+          
+          on: function(eventName, callback) {
+            if (!this._listeners[eventName]) {
+              this._listeners[eventName] = [];
+              
+              // Set up Socket.IO listener
+              socket.on(eventName, (data) => {
+                this._listeners[eventName].forEach(cb => cb(data));
+              });
+            }
+            this._listeners[eventName].push(callback);
+          },
+          
+          removeAllListeners: function(eventName) {
+            if (eventName) {
+              delete this._listeners[eventName];
+              socket.off(eventName);
+            } else {
+              Object.keys(this._listeners).forEach(name => {
+                socket.off(name);
+              });
+              this._listeners = {};
+            }
+          },
+          
+          emit: function(eventName, data) {
+            socket.emit(eventName, data);
+          }
+        };
+        
+        // Set up the global config for Ember Inspector
+        window.EMBER_INSPECTOR_CONFIG = {
+          remoteDebugSocket: socketWrapper
+        };
+        
+        console.log('Ember Inspector WebSocket client initialized');
+      })();
+    </script>
+`;
+      
+      // Replace the {{ remote-port }} placeholder with our script
+      const modifiedHtml = html.replace('{{ remote-port }}', wsScript);
+      
+      res.setHeader('Content-Type', 'text/html');
+      res.send(modifiedHtml);
+    });
+  });
+  
   app.use(express.static(inspectorPath));
 
   // Store connections
@@ -123,10 +198,7 @@ export function createInspectorServer(options = {}) {
   });
 }
 
-// If run directly
-if (import.meta.url === `file://${process.argv[1]}`) {
-  createInspectorServer({ verbose: true }).catch((err) => {
-    console.error('Failed to start server:', err);
-    process.exit(1);
-  });
-}
+createInspectorServer({ verbose: true }).catch((err) => {
+  console.error('Failed to start server:', err);
+  process.exit(1);
+});
