@@ -2,7 +2,7 @@
 // EXAMPLE 1: Starting the Inspector Server
 // ============================================================================
 
-import { createInspectorServer } from './inspector-server.js';
+import { createInspectorServer } from './inspector-server.mjs';
 
 // Start server with default options
 const server = await createInspectorServer();
@@ -107,7 +107,7 @@ async function setupInspectorWithErrorHandling() {
 // ============================================================================
 
 import express from 'express';
-import { createInspectorServer } from './inspector-server.js';
+import { createInspectorServer } from './inspector-server.mjs';
 
 async function setupWithExpress() {
   // Your existing Express app
@@ -168,7 +168,7 @@ function setupForEnvironment(env = 'development') {
 // EXAMPLE 7: Testing Setup
 // ============================================================================
 
-import { createInspectorServer } from './inspector-server.js';
+import { createInspectorServer } from './inspector-server.mjs';
 import { setupEmberInspector } from './setup-inspector.js';
 
 async function testInspectorSetup() {

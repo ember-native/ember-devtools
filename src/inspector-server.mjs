@@ -1,4 +1,6 @@
 import express from 'express';
+#!/usr/bin/env node
+
 import { createServer } from 'http';
 import { Server } from 'socket.io';
 import path from 'path';

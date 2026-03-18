@@ -7,14 +7,14 @@
     "url": "git@github.com:ember-native/ember-devtools.git"
   },
   "type": "module",
-  "main": "src/inspector-server.js",
+  "main": "src/inspector-server.mjs",
   "exports": {
     ".": "./src/inspector-server.js",
     "./server": "./src/inspector-server.js",
     "./client": "./src/setup-inspector.js"
   },
   "bin": {
-    "ember-inspector-server": "./src/inspector-server.js"
+    "ember-inspector-server": "src/inspector-server.mjs"
   },
   "engines": {
     "node": ">=18"
@@ -23,8 +23,8 @@
     "src/"
   ],
   "scripts": {
-    "start": "node src/inspector-server.js",
-    "server": "node src/inspector-server.js"
+    "start": "node src/inspector-server.mjs",
+    "server": "node src/inspector-server.mjs"
   },
   "keywords": [
     "ember",

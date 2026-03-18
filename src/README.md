@@ -29,7 +29,7 @@ node inspector-server.js
 Or use it programmatically:
 
 ```javascript
-import { createInspectorServer } from './inspector-server.js';
+import { createInspectorServer } from './inspector-server.mjs';
 
 const server = await createInspectorServer({
   port: 9229,
