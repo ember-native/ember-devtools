@@ -1,36 +1,52 @@
 {
   "name": "ember-native-devtools",
-  "version": "1.0.4",
+  "version": "2.0.0",
+  "description": "Ember Inspector for Node.js environments using WebSocket",
   "repository": {
     "type": "git",
     "url": "git@github.com:ember-native/ember-devtools.git"
   },
+  "type": "module",
+  "main": "src/inspector-server.mjs",
+  "exports": {
+    ".": "./src/inspector-server.js",
+    "./server": "./src/inspector-server.js",
+    "./client": "./src/setup-inspector.js"
+  },
   "bin": {
-    "ember-devtools": "bin/devtools.js"
+    "ember-inspector-server": "src/inspector-server.mjs"
   },
   "engines": {
     "node": ">=18"
   },
   "files": [
-    "bin",
-    "download"
+    "src/"
   ],
   "scripts": {
-    "run": "node bin/devtools.js"
+    "start": "node src/inspector-server.mjs",
+    "server": "node src/inspector-server.mjs"
   },
+  "keywords": [
+    "ember",
+    "inspector",
+    "devtools",
+    "debugging",
+    "websocket",
+    "nodejs",
+    "ssr",
+    "fastboot"
+  ],
   "dependencies": {
-    "selenium-webdriver": "^4.33.0",
-    "ember-inspector": "^4.13.1"
+    "express": "^4.21.2",
+    "socket.io": "^4.8.1",
+    "ember-inspector": "^4.15.1"
   },
   "peerDependencies": {
-    "chromedriver": "*"
+    "socket.io-client": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/parser": "^7.27.2",
-    "@babel/traverse": "^7.27.1",
-    "website-scraper": "^5.3.1",
-    "website-scraper-puppeteer": "^1.1.0",
-    "@rollup/plugin-commonjs": "^28.0.3",
     "release-plan": "^0.16.0"
-  }
+  },
+  "author": "Patrick Pircher",
+  "license": "MIT"
 }
