@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-03-19)
+
+* ember-native-devtools 3.0.0 (major)
+
+#### :boom: Breaking Change
+* `ember-native-devtools`
+  * [#54](https://github.com/ember-native/ember-devtools/pull/54) use websocket ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
 ## Release (2025-05-09)
 
 * ember-native-devtools 1.0.4 (patch)
