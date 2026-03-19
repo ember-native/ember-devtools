@@ -1,6 +1,6 @@
 {
   "name": "ember-native-devtools",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Ember Inspector for Node.js environments using WebSocket",
   "repository": {
     "type": "git",

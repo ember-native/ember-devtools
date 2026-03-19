@@ -1,18 +1,18 @@
 {
   "solution": {
     "ember-native-devtools": {
-      "impact": "patch",
-      "oldVersion": "1.0.3",
-      "newVersion": "1.0.4",
+      "impact": "major",
+      "oldVersion": "2.0.0",
+      "newVersion": "3.0.0",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "patch",
-          "reason": "Appears in changelog section :bug: Bug Fix"
+          "impact": "major",
+          "reason": "Appears in changelog section :boom: Breaking Change"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2025-05-09)\n\n* ember-native-devtools 1.0.4 (patch)\n\n#### :bug: Bug Fix\n* `ember-native-devtools`\n  * [#10](https://github.com/ember-native/ember-devtools/pull/10) update deps ([@patricklx](https://github.com/patricklx))\n\n#### Committers: 1\n- Patrick Pircher ([@patricklx](https://github.com/patricklx))\n"
+  "description": "## Release (2026-03-19)\n\n* ember-native-devtools 3.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-native-devtools`\n  * [#54](https://github.com/ember-native/ember-devtools/pull/54) use websocket ([@patricklx](https://github.com/patricklx))\n\n#### Committers: 1\n- Patrick Pircher ([@patricklx](https://github.com/patricklx))\n"
 }
