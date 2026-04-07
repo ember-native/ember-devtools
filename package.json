@@ -45,7 +45,7 @@
     "socket.io-client": "^4.0.0"
   },
   "devDependencies": {
-    "release-plan": "^0.16.0"
+    "release-plan": "^0.18.0"
   },
   "author": "Patrick Pircher",
   "license": "MIT"
