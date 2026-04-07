@@ -40,7 +40,7 @@ Or programmatically:
 import { createInspectorServer } from 'ember-native-devtools/server';
 
 const server = await createInspectorServer({
-  port: 9229,
+  port: 9230,
   host: 'localhost',
   verbose: true
 });
@@ -53,7 +53,7 @@ import { setupEmberInspector, loadEmberDebug } from 'ember-native-devtools/clien
 
 // After your Ember app boots
 setupEmberInspector({
-  serverUrl: 'http://localhost:9229',
+  serverUrl: 'http://localhost:9230',
   appName: 'My Ember App'
 });
 
@@ -63,7 +63,7 @@ loadEmberDebug();
 
 ### 3. Open Inspector UI
 
-Open your browser to: `http://localhost:9229`
+Open your browser to: `http://localhost:9230`
 
 ## Configuration
 
@@ -71,7 +71,7 @@ Open your browser to: `http://localhost:9229`
 
 ```javascript
 createInspectorServer({
-  port: 9229,           // Port to listen on (default: 9229)
+  port: 9230,           // Port to listen on (default: 9230)
   host: 'localhost',    // Host to bind to (default: 'localhost')
   verbose: false        // Enable verbose logging (default: false)
 });
@@ -81,7 +81,7 @@ createInspectorServer({
 
 ```javascript
 setupEmberInspector({
-  serverUrl: 'http://localhost:9229',  // Inspector server URL
+  serverUrl: 'http://localhost:9230',  // Inspector server URL
   appName: 'My App',                   // App name for identification
   autoConnect: true,                   // Auto-connect on setup (default: true)
   verbose: false                       // Enable verbose logging (default: false)
@@ -90,9 +90,9 @@ setupEmberInspector({
 
 ## Environment Variables
 
-- `PORT` - Server port (default: 9229)
+- `PORT` - Server port (default: 9230)
 - `HOST` - Server host (default: localhost)
-- `INSPECTOR_URL` - Inspector server URL for client (default: http://localhost:9229)
+- `INSPECTOR_URL` - Inspector server URL for client (default: http://localhost:9230)
 
 ## Examples
 
@@ -126,7 +126,7 @@ See [example-usage.js](src/example-usage.js) for complete examples including:
 ## Troubleshooting
 
 ### Server won't start
-- Check if port 9229 is already in use
+- Check if port 9230 is already in use
 - Try a different port: `PORT=9230 npx ember-inspector-server`
 
 ### App won't connect

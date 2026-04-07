@@ -16,7 +16,7 @@ const __filename = fileURLToPath(import.meta.url);
  */
 export function setupEmberInspector(options = {}) {
   const {
-    serverUrl = process.env.INSPECTOR_URL || 'http://localhost:9229',
+    serverUrl = process.env.INSPECTOR_URL || 'http://localhost:9230',
     appName = 'Ember App',
     autoConnect = true,
     verbose = false
