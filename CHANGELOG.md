@@ -1,5 +1,17 @@
 # Changelog
 
+## Release (2026-04-07)
+
+* ember-native-devtools 3.0.1 (patch)
+
+#### :bug: Bug Fix
+* `ember-native-devtools`
+  * [#60](https://github.com/ember-native/ember-devtools/pull/60) change port to 9230 ([@patricklx](https://github.com/patricklx))
+  * [#58](https://github.com/ember-native/ember-devtools/pull/58) Remove shebang line from inspector-server.mjs ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
 ## Release (2026-03-19)
 
 * ember-native-devtools 3.0.0 (major)
