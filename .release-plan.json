@@ -1,18 +1,18 @@
 {
   "solution": {
     "ember-native-devtools": {
-      "impact": "major",
-      "oldVersion": "2.0.0",
-      "newVersion": "3.0.0",
+      "impact": "patch",
+      "oldVersion": "3.0.0",
+      "newVersion": "3.0.1",
       "tagName": "latest",
       "constraints": [
         {
-          "impact": "major",
-          "reason": "Appears in changelog section :boom: Breaking Change"
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
         }
       ],
       "pkgJSONPath": "./package.json"
     }
   },
-  "description": "## Release (2026-03-19)\n\n* ember-native-devtools 3.0.0 (major)\n\n#### :boom: Breaking Change\n* `ember-native-devtools`\n  * [#54](https://github.com/ember-native/ember-devtools/pull/54) use websocket ([@patricklx](https://github.com/patricklx))\n\n#### Committers: 1\n- Patrick Pircher ([@patricklx](https://github.com/patricklx))\n"
+  "description": "## Release (2026-04-07)\n\n* ember-native-devtools 3.0.1 (patch)\n\n#### :bug: Bug Fix\n* `ember-native-devtools`\n  * [#60](https://github.com/ember-native/ember-devtools/pull/60) change port to 9230 ([@patricklx](https://github.com/patricklx))\n  * [#58](https://github.com/ember-native/ember-devtools/pull/58) Remove shebang line from inspector-server.mjs ([@patricklx](https://github.com/patricklx))\n\n#### Committers: 1\n- Patrick Pircher ([@patricklx](https://github.com/patricklx))\n"
 }
