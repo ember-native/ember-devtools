@@ -19,7 +19,7 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
  */
 export function createInspectorServer(options = {}) {
   const {
-    port = process.env.PORT || 9229,
+    port = process.env.PORT || 9230,
     host = process.env.HOST || 'localhost',
     verbose = false
   } = options;
