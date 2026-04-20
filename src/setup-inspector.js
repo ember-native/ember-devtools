@@ -48,6 +48,8 @@ export function setupEmberInspector(options = {}) {
         reconnectionAttempts: 5
       });
 
+      // patch socket 
+
       // Set up global config for ember-inspector
       if (typeof window !== 'undefined') {
         window.EMBER_INSPECTOR_CONFIG = {
