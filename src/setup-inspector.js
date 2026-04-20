@@ -48,6 +48,17 @@ export function setupEmberInspector(options = {}) {
         reconnectionAttempts: 5
       });
 
+      // Monkey patch socket to prevent buffering when disconnected
+      // This prevents memory buildup from buffered messages
+      const originalEmit = socket.emit.bind(socket);
+      socket.emit = function(...args) {
+        // Only emit if connected, otherwise drop the message
+        if (socket.connected) {
+          return originalEmit(...args);
+        }
+        return socket;
+      };
+
       // Set up global config for ember-inspector
       if (typeof window !== 'undefined') {
         window.EMBER_INSPECTOR_CONFIG = {
