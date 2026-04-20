@@ -1,5 +1,16 @@
 # Changelog
 
+## Release (2026-04-20)
+
+* ember-native-devtools 3.0.2 (patch)
+
+#### :bug: Bug Fix
+* `ember-native-devtools`
+  * [#62](https://github.com/ember-native/ember-devtools/pull/62) do not buffer messages when disconnected  ([@patricklx](https://github.com/patricklx))
+
+#### Committers: 1
+- Patrick Pircher ([@patricklx](https://github.com/patricklx))
+
 ## Release (2026-04-07)
 
 * ember-native-devtools 3.0.1 (patch)
