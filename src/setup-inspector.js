@@ -56,8 +56,6 @@ export function setupEmberInspector(options = {}) {
         if (socket.connected) {
           return originalEmit(...args);
         }
-        // Silently drop messages when disconnected to prevent buffering
-        log('Dropped message while disconnected:', args[0]);
         return socket;
       };
 
