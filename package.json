@@ -39,7 +39,7 @@
   "dependencies": {
     "express": "^5.2.1",
     "socket.io": "^4.8.1",
-    "ember-inspector": "^4.15.1"
+    "ember-inspector": "^4.17.0"
   },
   "peerDependencies": {
     "socket.io-client": "^4.0.0"
